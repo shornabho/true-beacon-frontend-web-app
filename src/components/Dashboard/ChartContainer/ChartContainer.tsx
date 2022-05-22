@@ -51,14 +51,6 @@ const ChartContainer = () => {
             dispatch(getHistoricalData(chosenSymbol, chosenStartDate, chosenEndDate));
     }, [dispatch, chosenSymbol, chosenStartDate, chosenEndDate]);
 
-    const data: { date: number; price: number }[] = [];
-    for (let num = 30; num >= 0; num--) {
-        data.push({
-            date: subDays(new Date(), num).getTime(),
-            price: 1 + Math.random(),
-        });
-    }
-
     return (
         <Grid container>
             <Grid item xs={12}>
@@ -90,13 +82,7 @@ const ChartContainer = () => {
                         onChange={(date: Date | null) => {
                             setChosenStartDate(date);
                         }}
-                        shouldDisableDate={(date: Date) =>
-                            !!(
-                                date < dateLimits?.minDate ||
-                                date > dateLimits?.maxDate ||
-                                (chosenEndDate && date > chosenEndDate)
-                            )
-                        }
+                        shouldDisableDate={(date: Date) => !!(date < dateLimits?.minDate || date > dateLimits?.maxDate)}
                         disableFuture
                         renderInput={(params) => <TextField {...params} sx={{ m: 1, minWidth: 120 }} size="small" />}
                     />
@@ -107,13 +93,7 @@ const ChartContainer = () => {
                         onChange={(date: Date | null) => {
                             setChosenEndDate(date);
                         }}
-                        shouldDisableDate={(date: Date) =>
-                            !!(
-                                date < dateLimits?.minDate ||
-                                date > dateLimits?.maxDate ||
-                                (chosenStartDate && date < chosenStartDate)
-                            )
-                        }
+                        shouldDisableDate={(date: Date) => !!(date < dateLimits?.minDate || date > dateLimits?.maxDate)}
                         disableFuture
                         renderInput={(params) => <TextField {...params} sx={{ m: 1, minWidth: 120 }} size="small" />}
                     />

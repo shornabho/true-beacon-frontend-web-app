@@ -1,19 +1,37 @@
 body {
-	margin: 0;
-	font-family: 'Public Sans', sans-serif !important;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: "Public Sans", sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a,
 a:hover,
 a:visited {
-	color: inherit;
-	text-decoration: inherit;
+    color: inherit;
+    text-decoration: inherit;
 }
 
 .container {
-	width: 80%;
-	max-width: 1440px;
-	margin: auto;
+    width: 80%;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.tooltip {
+    border-radius: 0.25rem;
+    background: #202224;
+    color: #fff;
+    padding: 1rem 1rem;
+    box-shadow: 15px 30px 40px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.tooltip p {
+    margin: 0 0 0.5rem;
+    padding: 0;
+}
+
+.tooltip small {
+    color: #ccc;
 }

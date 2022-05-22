@@ -51,7 +51,6 @@ const AuthBox = () => {
                         </Typography>
                         <hr />
                         <form onSubmit={handleSubmit}>
-                            <Typography variant="caption" color={"red"}></Typography>
                             <TextField
                                 name="username"
                                 variant="outlined"

@@ -39,11 +39,23 @@ const PriceChart = ({ data }: { data: { date: number; price: number }[] }) => {
                     tickFormatter={(number) => `${numeral(number).format("0a")}`}
                     domain={yAxisRange}
                 ></YAxis>
-                <Tooltip />
+                <Tooltip content={<CustomToolTip />} />
                 <CartesianGrid opacity={0.3} vertical={false} />
             </AreaChart>
         </ResponsiveContainer>
     );
+};
+
+const CustomToolTip = ({ active, payload, label }: any) => {
+    if (active) {
+        return (
+            <div className="tooltip">
+                <p>₹ {numeral(payload[0].value).format("0,0")}</p>
+                <small>{format(new Date(label), "MMM d, yyyy")}</small>
+            </div>
+        );
+    }
+    return <></>;
 };
 
 export default PriceChart;
