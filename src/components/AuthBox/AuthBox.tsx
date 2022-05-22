@@ -44,60 +44,58 @@ const AuthBox = () => {
     return (
         <div className="container">
             <Container>
-                <Paper elevation={16} sx={{ margin: "3rem auto", width: "50%", padding: "7% 7% 8%" }}>
-                    <Container>
-                        <Typography variant="h3" component="h1" gutterBottom>
+                <Paper elevation={16} sx={{ margin: "3rem auto", width: "70%", padding: "7% 7% 8%" }}>
+                    <Typography variant="h3" component="h1" gutterBottom>
+                        {isRegister ? <>Register</> : <>Login</>}
+                    </Typography>
+                    <hr />
+                    <form onSubmit={handleSubmit}>
+                        <TextField
+                            name="username"
+                            variant="outlined"
+                            label="Username"
+                            required
+                            fullWidth
+                            margin="normal"
+                            onChange={handleChange}
+                        />
+
+                        {isRegister && (
+                            <TextField
+                                name="name"
+                                variant="outlined"
+                                label="Name"
+                                required
+                                fullWidth
+                                margin="normal"
+                                onChange={handleChange}
+                            />
+                        )}
+                        <TextField
+                            name="password"
+                            variant="outlined"
+                            label="Password"
+                            required
+                            fullWidth
+                            margin="normal"
+                            type={"password"}
+                            onChange={handleChange}
+                        />
+
+                        <Button
+                            sx={{
+                                marginTop: "1rem",
+                                backgroundColor: "#ffa500",
+                                ":hover": { backgroundColor: "#fea500" },
+                            }}
+                            variant="contained"
+                            size="large"
+                            type="submit"
+                            fullWidth
+                        >
                             {isRegister ? <>Register</> : <>Login</>}
-                        </Typography>
-                        <hr />
-                        <form onSubmit={handleSubmit}>
-                            <TextField
-                                name="username"
-                                variant="outlined"
-                                label="Username"
-                                required
-                                fullWidth
-                                margin="normal"
-                                onChange={handleChange}
-                            />
-
-                            {isRegister && (
-                                <TextField
-                                    name="name"
-                                    variant="outlined"
-                                    label="Name"
-                                    required
-                                    fullWidth
-                                    margin="normal"
-                                    onChange={handleChange}
-                                />
-                            )}
-                            <TextField
-                                name="password"
-                                variant="outlined"
-                                label="Password"
-                                required
-                                fullWidth
-                                margin="normal"
-                                type={"password"}
-                                onChange={handleChange}
-                            />
-
-                            <Button
-                                sx={{
-                                    marginTop: "1rem",
-                                    backgroundColor: "#ffa500",
-                                    ":hover": { backgroundColor: "#fea500" },
-                                }}
-                                variant="contained"
-                                size="large"
-                                type="submit"
-                                fullWidth
-                            >
-                                {isRegister ? <>Register</> : <>Login</>}
-                            </Button>
-                        </form>
-                    </Container>
+                        </Button>
+                    </form>
                 </Paper>
             </Container>
         </div>

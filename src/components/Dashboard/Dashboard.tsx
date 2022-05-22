@@ -11,7 +11,14 @@ const Dashboard = () => {
 
     return (
         <div className="container">
-            <Grid container justifyContent={"space-evenly"} alignItems="start" spacing={3} marginTop={1}>
+            <Grid
+                container
+                justifyContent={"space-evenly"}
+                alignItems="start"
+                spacing={3}
+                marginTop={1}
+                marginBottom={5}
+            >
                 <Grid item xs={12} md={9}>
                     <h1>Historical Data</h1>
                     <ChartContainer></ChartContainer>
