@@ -1,0 +1,45 @@
+.navbarWrapper {
+    background-color: #202224;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+}
+
+.brandLogo {
+    height: 2rem;
+    padding: 0.25rem 0;
+    margin: auto;
+}
+
+.navLinks {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    margin: 0.5rem;
+}
+
+.navLink {
+    list-style: none;
+    color: #ffffff !important;
+    padding: 0.5rem 0.75rem;
+    transition: background-color ease-in-out 100ms;
+}
+
+.navLink:hover {
+    background-color: #ffffff2e;
+    border-radius: 0.25rem;
+}

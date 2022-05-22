@@ -1,0 +1,19 @@
+body {
+	margin: 0;
+	font-family: 'Public Sans', sans-serif !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a,
+a:hover,
+a:visited {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.container {
+	width: 80%;
+	max-width: 1440px;
+	margin: auto;
+}
