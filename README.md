@@ -26,10 +26,6 @@ npm --version
 
 This should give return your `npm` version.
 
-## Available Scripts
-
-In the project directory, you can run:
-
 ## Setup the Source Code 💻
 
 ### Clone the Github repository 🌐
